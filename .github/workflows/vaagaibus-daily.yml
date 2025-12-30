@@ -1,0 +1,32 @@
+name: Vaagaibus Daily Inventory Report (IST)
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # 09:30 AM IST
+  workflow_dispatch:
+
+jobs:
+  run-report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Vaagaibus Report
+        env:
+          VAAGAI_TOKEN: ${{ secrets.VAAGAI_TOKEN }}
+          VAAGAI_SESSION: ${{ secrets.VAAGAI_SESSION }}
+          ZOHO_PASSWORD: ${{ secrets.ZOHO_PASSWORD }}
+        run: |
+          python vaagaibus_report.py
