@@ -31,7 +31,7 @@ ZOHO_PASSWORD = "JqkGLkfkTf0n"      # Zoho App Password
 MANAGER_EMAIL = "avinash.sk@hopzy.in"
 
 # CC recipients
-CC_EMAILS = ["siddarth.shetty@hopzy.in", "tejus.a@hopzy.in"]
+CC_EMAILS = [ "tejus.a@hopzy.in","bandari.gk@hopzy.in","siddarth.shetty@hopzy.in"]
 
 
 def get_operators():
@@ -480,4 +480,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
