@@ -2,7 +2,7 @@ name: Vaagaibus Daily Inventory Report (IST)
 
 on:
   schedule:
-    - cron: "0 4 * * *"   # 09:30 AM IST
+    - cron: "0 2 * * *"   # 09:30 AM IST
   workflow_dispatch:
 
 jobs:
